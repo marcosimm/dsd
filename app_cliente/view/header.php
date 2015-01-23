@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="view/css/sl-slide.css">
 
     <script src="view/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="view/js/funciones.js"></script>
 
     <!-- Icono del navegador -->
     <link rel="shortcut icon" href="view/images/ico/favicon.ico">
@@ -41,9 +42,9 @@
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li class="active"><a href="index.php">Inicio</a></li>
-                        <li><a href="view/servicios.php">Servicios</a></li>
+                        <li><a href="?c=servicios">Servicios</a></li>
                         <li><a href="?c=login">Consulta en linea</a></li>
-						<li><a href="acerca.html">Acerca de</a></li> 
+						<li><a href="?c=acercade">Acerca de</a></li> 
                     </ul>        
                 </div><!--/.nav-collapse -->
             </div>

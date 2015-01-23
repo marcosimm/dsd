@@ -1,6 +1,6 @@
 <section id="contact-page" class="container">
     <div class="row-fluid">
-        <div class="span8">
+        <div class="span6">
             <h4>Autenticaci&oacute;n de usuario</h4>
             <div class="status alert alert-success" style="display: none"></div>
 
@@ -17,4 +17,6 @@
             </form>
         </div>
     </div>
+    <br>
+    <a href="?c=login&a=recupera">¿Olvidaste tu contrase&ntilde;a?</a> | <a href="?c=login&a=nuevo">Registro nuevo</a>
 </section>

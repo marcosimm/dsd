@@ -4,6 +4,7 @@ class Login
 	private $cod_usuario;
 	private $nom_usuario;
 	private $nom_correo;
+	private $nom_clave;
 	private $nom_empresa;
 	private $nom_estado;
 

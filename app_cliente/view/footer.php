@@ -12,8 +12,7 @@
             </div>
             <div class="span10">
                 <div id="myCarousel" class="carousel slide clients">
-                  <!-- Carousel items -->
-                  <div class="carousel-inner">
+                  <div class="carousel-inner"><!-- Carousel items -->
                     <div class="active item">
                         <div class="row-fluid">
                             <ul class="thumbnails">
@@ -24,7 +23,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="item">
                         <div class="row-fluid">
                             <ul class="thumbnails">
@@ -35,7 +33,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="item">
                         <div class="row-fluid">
                             <ul class="thumbnails">
@@ -46,25 +43,19 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <!-- /Carousel items -->
-
+                </div><!-- /Carousel items -->
             </div>
         </div>
     </div>
 </div>
 </section>
-
-<!--Footer-->
-<footer id="footer">
+<footer id="footer"><!--Footer-->
     <div class="container">
         <div class="row-fluid">
             <div class="span5 cp">
                 &copy; 2015 All Rights Reserved.
             </div>
-            <!--/Copyright-->
-
-            <div class="span6">
+            <div class="span6"><!--/Copyright-->
                 <ul class="social pull-right">
                     <li><a href="#"><i class="icon-facebook"></i></a></li>
                     <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -79,34 +70,24 @@
                     <li><a href="#"><i class="icon-instagram"></i></a></li>                   
                 </ul>
             </div>
-
             <div class="span1">
                 <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
-            </div>
-            <!--/Goto Top-->
+            </div><!--/Goto Top-->
         </div>
     </div>
-</footer>
-<!--/Footer-->
-
+</footer><!--/Footer-->
 <script src="view/js/vendor/jquery-1.9.1.min.js"></script>
 <script src="view/js/vendor/bootstrap.min.js"></script>
-<script src="view/js/main.js"></script>
-<!-- Required javascript files for Slider -->
+<script src="view/js/main.js"></script><!-- Required javascript files for Slider -->
 <script src="view/js/jquery.ba-cond.min.js"></script>
 <script src="view/js/jquery.slitslider.js"></script>
-<!-- /Required javascript files for Slider -->
-
-<!-- SL Slider -->
 <script type="text/javascript"> 
 $(function() {
     var Page = (function() {
-
         var $navArrows = $( '#nav-arrows' ),
         slitslider = $( '#slider' ).slitslider( {
             autoplay : true
         } ),
-
         init = function() {
             initEvents();
         },
@@ -115,20 +96,15 @@ $(function() {
                 slitslider.next();
                 return false;
             });
-
             $navArrows.children( ':first' ).on( 'click', function() {
                 slitslider.previous();
                 return false;
             });
         };
-
         return { init : init };
-
     })();
-
     Page.init();
 });
 </script>
-<!-- /SL Slider -->
 </body>
 </html>
