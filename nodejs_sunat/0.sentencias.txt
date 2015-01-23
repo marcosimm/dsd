@@ -1,0 +1,33 @@
+-- SENTENCIAS MONGODB
+-- Instalar mongodb
+sudo apt-get install mongodb
+
+-- Ejecutar con una ruta de la BD
+-- mongod --dbpath /home/edgardma/Applications/db
+sudo service mongodb start
+
+sudo nano /etc/mongodb.conf
+
+smallfiles=true
+
+sudo service mongodb restart
+
+-- Ejecutar la aplicacion
+node /home/edgardma/Applications/sunat/server.js
+
+-- Borrar la base de datos
+use sunatdb;
+db.dropDatabase();
+
+-- Insertar un registro
+use sunatdb;
+db.sunat.insert({ruc : "20301821388",razonsocial: "TUBISA S.A.C.",tipo: "SOCIEDAD ANONIMA CERRADA",fechains: "11/11/2011",condicion: "HABIDO",estado: "NO ACTIVO",direccion: "Av. Primavera No.3847 - Urb. Monterrico - Surco",telefono1: "56787122",anexo1: "121545"});
+
+
+-- SENTENCIAS NODE
+-- ir a la ruta del aplicacion y ejecutar
+cd /home/edgardma/Applications/sunat
+npm install
+-- instalar el conector de mongodb
+npm install mongodb
+
