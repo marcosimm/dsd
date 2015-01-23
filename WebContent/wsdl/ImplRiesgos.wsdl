@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.distribuidos.upc.edu.pe" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.distribuidos.upc.edu.pe" xmlns:intf="http://services.distribuidos.upc.edu.pe" xmlns:tns1="http://beans.distribuidos.upc.edu.pe" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.distribuidos.upc.edu.pe" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://beans.distribuidos.upc.edu.pe"/>
+   <element name="buscarRiesgoPorRuc">
+    <complexType>
+     <sequence>
+      <element name="ruc" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscarRiesgoPorRucResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscarRiesgoPorRucReturn" type="tns1:RiesgoDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://beans.distribuidos.upc.edu.pe" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="RiesgoDTO">
+    <sequence>
+     <element name="actual" nillable="true" type="xsd:string"/>
+     <element name="anual" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+     <element name="montoTotal" type="xsd:double"/>
+     <element name="ruc" nillable="true" type="xsd:string"/>
+     <element name="score" type="xsd:double"/>
+     <element name="semestre" nillable="true" type="xsd:string"/>
+     <element name="variacion" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="buscarRiesgoPorRucResponse">
+
+      <wsdl:part element="impl:buscarRiesgoPorRucResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarRiesgoPorRucRequest">
+
+      <wsdl:part element="impl:buscarRiesgoPorRuc" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ImplRiesgos">
+
+      <wsdl:operation name="buscarRiesgoPorRuc">
+
+         <wsdl:input message="impl:buscarRiesgoPorRucRequest" name="buscarRiesgoPorRucRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscarRiesgoPorRucResponse" name="buscarRiesgoPorRucResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ImplRiesgosSoapBinding" type="impl:ImplRiesgos">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="buscarRiesgoPorRuc">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscarRiesgoPorRucRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscarRiesgoPorRucResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ImplRiesgosService">
+
+      <wsdl:port binding="impl:ImplRiesgosSoapBinding" name="ImplRiesgos">
+
+         <wsdlsoap:address location="http://localhost:8080/Riesgos/services/ImplRiesgos"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
