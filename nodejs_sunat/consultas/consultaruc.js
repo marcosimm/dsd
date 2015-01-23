@@ -26,7 +26,11 @@ exports.findById = function(req, res) {
                         var id = req.params.id;
                         console.log('Recuperando datos: ' + id);
                         db.collection('sunat', function(err, collection) {
-                            collection.findOne({'_id':new BSON.ObjectID(id)}, 
+                            /*collection.findOne({'_id':new BSON.ObjectID(id)}, 
+                            function(err, item) {
+                                res.send(item);
+                            });*/
+                            collection.findOne({'ruc':id}, 
                             function(err, item) {
                                 res.send(item);
                             });
@@ -48,6 +52,7 @@ exports.findAll =   function(req, res) {
 var populateDB = function() { 
     var sunat = [
             {
+                ruc : "12345678901",
                 razonsocial: "Empresa Exportadora de Papas S.A.",
                 tipo: "SOCIEDAD ANONIMA",
                 fechains: "08/03/1996",
@@ -58,6 +63,7 @@ var populateDB = function() {
                 anexo1: "1234"
             },
             {
+                ruc : "12345678902",
                 razonsocial: "American Import S.A.",
                 tipo: "SOCIEDAD ANONIMA",
                 fechains: "08/03/1996",
@@ -68,6 +74,7 @@ var populateDB = function() {
                 anexo1: "5678"
             },
             {
+                ruc : "12345678903",
                 razonsocial: "Empresa de Transporte El Rapido S.R.L.",
                 tipo: "SOCIEDAD RESPONSABILIDAD LIMITADA",
                 fechains: "08/03/1996",
@@ -76,6 +83,28 @@ var populateDB = function() {
                 direccion: "Av. Con nombre No.888 - Urb. Dulanto - Callao",
                 telefono1: "8888888",
                 anexo1: "5678"
+            },
+            {
+                ruc : "12345678904",
+                razonsocial: "Empresa Exportadora de Mangos E.I.R.L.",
+                tipo: "EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA",
+                fechains: "08/03/1996",
+                condicion: "HABIDO",
+                estado: "ACTIVO",
+                direccion: "Av. Los Constructores No.777 - San Luis",
+                telefono1: "44444444",
+                anexo1: "89777"
+            },
+            {
+                ruc : "12345678905",
+                razonsocial: "IMPLAST S.A.C.",
+                tipo: "SOCIEDAD ANONIMA CERRADA",
+                fechains: "08/03/1996",
+                condicion: "HABIDO",
+                estado: "ACTIVO",
+                direccion: "Av. Las Flores No.1450 - Urb. Los Nogales - Miraflores",
+                telefono1: "879711111",
+                anexo1: "121545"
             }];
  
         db.collection('sunat', function(err, collection) {
