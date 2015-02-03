@@ -6,10 +6,16 @@
 
 package usuariodao;
 
+import usuariojdbc.JDBCUsuario;
+import usuariosbean.Usuario;
+
 /**
  *
  * @author PE-ITHLOPEZ
  */
-public class ListaUsuarios {
-    
+public class buscarUsuario {
+        public void buscarUsuario(Usuario user) {
+            JDBCUsuario jdbc = new JDBCUsuario();
+            jdbc.buscar(user.usuario);
+    }
 }

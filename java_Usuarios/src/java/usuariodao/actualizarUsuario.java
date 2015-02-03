@@ -3,13 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package usuariodao;
+
+import usuariojdbc.JDBCUsuario;
+import usuariosbean.Usuario;
 
 /**
  *
  * @author PE-ITHLOPEZ
  */
-public class AgregarUsuario {
-    
+public class actualizarUsuario {
+
+    public void actualizarUsuario(Usuario user) {
+        JDBCUsuario jdbc = new JDBCUsuario();
+        jdbc.actualizar(user);
+    }
 }

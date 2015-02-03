@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UsuarioJDBC;
+package usuariojdbc;
 
 import usuariosbean.Usuario;
 import java.sql.Connection;
@@ -21,7 +21,7 @@ import java.util.List;
 public class JDBCUsuario {
 
 
-    public List<Usuario> consulta(String filtroApellido) {
+    public List<Usuario> listar(String filtroApellido) {
         List<Usuario> lista = null;
         try {
             // Paso 1:
