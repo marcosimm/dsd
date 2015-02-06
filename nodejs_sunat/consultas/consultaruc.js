@@ -9,27 +9,25 @@ db = new Db('sunatdb', server);
 
 console.log("Inicio");
 
+// Conexión a la bas de datos
 db.open(function(err, db) {
             if(!err) {
-                console.log("Connected to 'sunatdb' database");
+                console.log("Conectando a la base de datos 'sunatdb'.");
                 db.collection('sunat', {strict:true},
                     function(err, collection) {
                         if (err) {
-                            console.log("The 'sunat' collection doesn't exist. Creating it with sample data...");
+                            console.log("La colección 'sunat' no existe. Se crea con datos de muestra...");
                             populateDB();
                         }
                     });
             }
         });
 
+// Buscar un registro, en este coso por el campo RUC
 exports.findById = function(req, res) {
                         var id = req.params.id;
                         console.log('Recuperando datos: ' + id);
                         db.collection('sunat', function(err, collection) {
-                            /*collection.findOne({'_id':new BSON.ObjectID(id)},
-                            function(err, item) {
-                                res.send(item);
-                            });*/
                             collection.findOne({'ruc':id},
                             function(err, item) {
                                 res.send(item);
@@ -37,8 +35,9 @@ exports.findById = function(req, res) {
                         });
                     };
 
+// Listar todos los elementos de la colexión
 exports.findAll =   function(req, res) {
-                        console.log('Recuperando todos');
+                        console.log('Recuperando todos los registros');
                         db.collection('sunat', function(err, collection) {
                             collection.find().toArray(function(err, items) {
                                 res.send(items);
@@ -47,8 +46,7 @@ exports.findAll =   function(req, res) {
                     };
 
 /*--------------------------------------------------------------------------------------------------------------------*/
-// Populate database with sample data -- Only used once: the first time the application is started.
-// You'd typically not find this code in a real-life app, since the database would already exist.
+// Llenar la base de datos con los datos de la muestra - Sólo se utiliza una vez: la primera vez que se inicia la aplicación.
 var populateDB = function() {
     var sunat = [
             {
